@@ -9,7 +9,7 @@ End With
 
 Set isExcelBookPath = CreateObject("VBScript.RegExp")
 With isExcelBookPath
-    .Pattern = ".*\.xls[xm]*$"
+    .Pattern = "\.xls[xm]*$"
     .IgnoreCase = True
 End With
 
@@ -21,7 +21,7 @@ Search target
 
 Sub Search(path)
     If fso.FileExists(path) Then
-        SearchFile target
+        SearchFile path
     ElseIf fso.FolderExists(path) Then
         RecursiveSearchFolder path
     End If
